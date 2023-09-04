@@ -33,6 +33,11 @@ $(function () {
         $('.sub').removeAttr('style')
     })
 
+    $('.main_slide').on('init afterChange', function (e, s, c) {
+        const current = $('.main_slide .slick-current');
+        current.addClass('on').siblings().removeClass('on');
+    });
+
     $('.main_slide').slick({
         dots: false,
         arrows: false,
